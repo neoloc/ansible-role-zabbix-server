@@ -97,3 +97,4 @@
   tags:
     - zabbix-server
     - zabbix
+  when: zabbix_server_configure == true
