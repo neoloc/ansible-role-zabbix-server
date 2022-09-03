@@ -1,0 +1,24 @@
+---
+# handlers file for role
+
+- name: create selinux mod for zabbix_server
+  ansible.builtin.command:
+    cmd: checkmodule -M -m -o /etc/zabbix/zabbixserver.mod /etc/zabbix/zabbixserver.te
+
+- name: create selinux pp for zabbix_server
+  ansible.builtin.command:
+    cmd: semodule_package -o /etc/zabbix/zabbixserver.pp -m /etc/zabbix/zabbixserver.mod
+
+- name: load selinux pp for zabbix_server
+  ansible.builtin.command:
+    cmd: semodule -i /etc/zabbix/zabbixserver.pp
+
+- name: restart zabbix_server
+  ansible.builtin.service:
+    name: zabbix-server
+    state: restarted
+  when:
+    - not ansible_check_mode
+    - not ci
+  vars:
+    ci: "{{ lookup('env', 'CI') }}"
