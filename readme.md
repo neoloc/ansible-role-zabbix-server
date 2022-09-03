@@ -1,15 +1,15 @@
-zabbix-server Role
+zabbix_server Role
 =========
 
 A role to install zabbix server and the databse.
 
-[![Ansible Galaxy](https://img.shields.io/badge/ansible--galaxy-neoloc.zabbix-server-blue.svg)](https://galaxy.ansible.com/neoloc/ansible-role-zabbix-server/)
+[![Ansible Galaxy](https://img.shields.io/badge/ansible--galaxy-neoloc.zabbix_server-blue.svg)](https://galaxy.ansible.com/neoloc/ansible-role-zabbix_server/)
 
 
 Requirements
 ------------
 
-neoloc.zabbix-repo
+neoloc.zabbix_repo
 
 Role Variables
 --------------
@@ -25,7 +25,7 @@ zabbix_server_database_host: localhost
 Dependencies
 ------------
 
-neoloc.zabbix-repo
+neoloc.zabbix_repo
 
 Example Playbook
 ----------------
@@ -34,8 +34,8 @@ Including an example of how to use your role (for instance, with variables passe
 
     - hosts: all
       roles:
-         - neoloc.zabbix-repo
-         - neoloc.zabbix-server
+         - neoloc.zabbix_repo
+         - neoloc.zabbix_server
 
 License
 -------

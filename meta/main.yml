@@ -1,6 +1,6 @@
 ---
 galaxy_info:
-  role_name: zabbix-server
+  role_name: zabbix_server
   author: neoloc
   description: Install and configure the zabbix server and database.
   license: "license (BSD, MIT)"
